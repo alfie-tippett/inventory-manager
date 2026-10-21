@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Stock</title>
+    <style>
+        input[type=text] {
+            width: 30%;
+            border-radius: 8px;
+        }
+        div {
+            align-items: center;
+            padding-left: 25%;
+            padding-right: 25%;
+            padding-top: 5%;
+        }
+        input[type=textarea] {
+            transition: width 0.4s ease-in-out;
+            width: 25%;
+        }
+        input[type=textarea]:focus {
+            height: 100px;
+            width: 50%;
+            padding:  12px 20px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 2px solid black;
+            resize: none;
+        }
+        input[type=button], input[type=submit], input[type=reset] {
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 16px 32px;
+            margin: 4px 2px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/add_stock" method="POST">
+            <label for="model">Model:</label>
+            <br>
+            <input type="text" id="model" name="model" required>
+            <br>
+            <label for="serial_num">Serial Number:</label>
+            <br>
+            <input type="text" id="serial_num" name="serial_num" required>
+            <br>
+            <label for="condition_notes">Condition and Notes:</label>
+            <br>
+            <input type="textarea" id="condition_notes" name="condition_notes" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

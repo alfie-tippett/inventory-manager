@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .navbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .wrapper {
+            padding: 0 15px;
+            max-width: 960px;
+            margin: 0 auto;
+
+            h1 {
+                font-size: 2.5vw
+            }
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style/styles.css') }}"> -->
+    <title>JJFAB Retro Stock Manager</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1 id="title">Inventory</h1>
+        <a href="{{ url_for('add_item') }}"><button>Add Item</button></a>
+        <a href="{{ url_for('remove_item') }}"><button>Remove Item</button></a>
+    </div>
+    <ul>
+        {% for inventory in inventory %}
+        <li>{{ inventory['id'] }} - {{ inventory['model'] }} - {{ inventory['serial_num'] }} - {{ inventory['condition'] }} </li>
+        {% endfor %}
+    </ul>    
+</body>
+</html>
